@@ -1,16 +1,8 @@
-import React from 'react';
-import {
-  Link
-} from "react-router-dom";
-import NewTeamFormContainer from '../components/NewTeamFormContainer';
+import React from "react";
+import { JoinPage } from "../components/pages/JoinPage";
 
-const Join: React.FC<{baseurl: string}> = ({baseurl}) => {
-
-  return (
-    <>
-      <NewTeamFormContainer baseurl={baseurl} />
-    </>
-  );
-}
+const Join: React.FC<{ baseurl: string }> = ({ baseurl }) => {
+  return <JoinPage baseurl={baseurl} />;
+};
 
 export default Join;
