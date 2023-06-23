@@ -15,7 +15,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
@@ -28,7 +28,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    host: '0.0.0.0',
+    host: "0.0.0.0",
     port: 3000,
     disableHostCheck: true,
   },
