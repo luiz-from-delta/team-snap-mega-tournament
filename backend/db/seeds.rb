@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+50.times do
+  Team.create({
+    name: Faker::Team.name,
+
+    captain_first_name: Faker::Name.first_name,
+    captain_last_name: Faker::Name.last_name
+  })
+  end

@@ -1,13 +1,22 @@
 class TeamsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  @@teams = []
   def index
-    render json: { content: @@teams }
+    teams = Team.order("created_at desc");
+    render json: { teams: teams }
   end
 
   def create
-    @@teams << params[:team]
-    render json: { content: @@teams }
+    team = Team.new(teamParams)
+    if team.save
+      render json: { team: team }, status: :ok
+    else
+      render json: { errors: team.errors }, status: :unprocessable_entity
+    end
+  end
+
+  private
+  def teamParams
+    params.permit(:name, :captain_first_name, :captain_last_name)
   end
 end
