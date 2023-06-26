@@ -1,1 +1,5 @@
-export const selectTeams = (state: {}) => (state as any).teams || [];
+import { Teams } from "../../api.types";
+
+export const selectTeams = (state: { teams: Teams }) => {
+  return state.teams || [];
+};

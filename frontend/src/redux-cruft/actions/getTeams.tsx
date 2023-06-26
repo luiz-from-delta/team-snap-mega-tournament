@@ -1,17 +1,11 @@
-import { update } from "./update"
+import API from "../../api";
+import { update } from "./update";
 
-export const getTeams = (params) => (dispatch) => {
-  // TODO: Brad said to get this data from the API BUT THE API DOESNT EXIST YET
-  // I NEED TO COME BACK AND FILL THIS IN ONCE THE API EXISTS
-  dispatch(update({key: "teams", value: [
-    {
-      teamName: "Teamsnap Turtles"
-    },
-    {
-      teamName: "TeamSnap Turkeys (because Turtles was already taken)"
-    },
-    {
-      teamName: "Lion Brigade"
-    }
-  ]}))
-}
+import { Teams } from "../../api.types";
+
+export const getTeams = (_params: any) => {
+  return async (dispatch: any): Promise<void> => {
+    const { teams } = await API.getData("teams");
+    dispatch(update({ key: "teams", value: teams as Teams }));
+  };
+};
