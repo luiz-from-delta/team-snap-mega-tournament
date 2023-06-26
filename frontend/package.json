@@ -29,6 +29,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "file-loader": "^6.2.0",
     "phosphor-react": "^1.4.1",
     "polished": "^4.2.2",
     "react": "^16.13.1",

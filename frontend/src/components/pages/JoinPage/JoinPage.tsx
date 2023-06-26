@@ -88,9 +88,9 @@ export const JoinPageComponent: React.FC<JoinPageProps> = ({ submitTeam }) => {
             <Button icon={<PaperPlaneRight size={18} type="submit" />}>
               Register
             </Button>
-            <Button icon={<ArrowCounterClockwise size={18} type="reset" />}>
+            {/* <Button icon={<ArrowCounterClockwise size={18} type="reset" />}>
               Reset Form
-            </Button>
+            </Button> */}
           </FlexBox>
         </FlexBox>
       </form>
