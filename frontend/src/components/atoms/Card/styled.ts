@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
+import { CardProps } from "./types";
 
-export const Card = styled("div")`
+export const Card = styled("div")<CardProps>`
   border-radius: 4px;
   box-shadow: ${(props) => props.theme.shadows.card};
-  padding: 3rem 4.6875rem;
+  padding: ${(props) => props.padding ?? "3rem 4.6875rem"};
 `;
