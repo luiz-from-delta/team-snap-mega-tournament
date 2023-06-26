@@ -19,10 +19,7 @@ const breadcrumbPaths: BreadcrumbPaths = [
   { href: "/join", label: "Register" },
 ];
 
-export const JoinPageComponent: React.FC<JoinPageProps> = ({
-  baseurl,
-  submitTeam,
-}) => {
+export const JoinPageComponent: React.FC<JoinPageProps> = ({ submitTeam }) => {
   const [teamName, setTeamName] = React.useState("");
 
   const [captainFirstName, setCaptainFirstName] = React.useState("");
@@ -47,16 +44,18 @@ export const JoinPageComponent: React.FC<JoinPageProps> = ({
     setCaptainLastName(captainLastName);
   };
 
-  const handleSubmit = useCallback((event: FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = useCallback(
+    (event: FormEvent) => {
+      event.preventDefault();
 
-    submitTeam({
-      url: `${baseurl}/new-team`,
-      teamName,
-      captainFirstName,
-      captainLastName,
-    });
-  }, []);
+      submitTeam({
+        name: teamName,
+        captain_first_name: captainFirstName,
+        captain_last_name: captainLastName,
+      });
+    },
+    [teamName, captainFirstName, captainLastName]
+  );
 
   return (
     <MainPageLayout breadcrumbProps={{ paths: breadcrumbPaths }}>

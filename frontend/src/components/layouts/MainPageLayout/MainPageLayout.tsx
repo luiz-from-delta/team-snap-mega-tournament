@@ -15,7 +15,7 @@ export const MainPageLayout: React.FC<MainPageLayoutProps> = ({
   children,
 }) => {
   return (
-    <main>
+    <main style={{ paddingBottom: 50 }}>
       <Header />
       <FlexBox
         as="section"

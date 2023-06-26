@@ -23,7 +23,7 @@ services:
       - db
   frontend:
     container_name: frontend
-    image: "node:14-alpine"
+    image: "node:16-alpine"
     user: "node"
     working_dir: /myapp/frontend
     volumes:
